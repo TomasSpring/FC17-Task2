@@ -2,7 +2,8 @@ var path = require('path');
 var webpack = require('webpack');
 
  module.exports = {
-     entry: './js/main.js',
+     //entry: './js/main.js',
+     entry: ["babel-polyfill", 'whatwg-fetch', "./js/main.js"],
      output: {
          path: path.resolve(__dirname, 'build'),
          filename: 'main.bundle.js'
