@@ -1,10 +1,6 @@
-import {API_KEY,URL,ROOT_NODE} from './config';
+import {API_KEY,URL,ROOT_NODE,NEWS_BLOCK,GET_ALL_CHANELL_BUTTON} from './config';
+import {datasetModule} from './dataset';
 
-//const API_KEY = `8eef20059fff4d46b5a8712e64d166f6`;
-//const URL = `https://newsapi.org/v2/top-headlines?sources=`;
-//const ROOT_NODE = document.querySelector('#js-content');
-const NEWS_BLOCK = ROOT_NODE.querySelector('.news-block');
-const GET_ALL_CHANELL_BUTTON = ROOT_NODE.querySelector('.sources-block');
 
 class News {
     /**
@@ -15,7 +11,13 @@ class News {
         GET_ALL_CHANELL_BUTTON.addEventListener('click', (e)=> {
             let target = e.target;
             if (target.classList.contains('source-list-img')) {
-                let source = target.dataset.chanel;
+                if (target.dataset) {
+                    var source = target.dataset.chanel;
+                    
+                }
+                else {
+                    var source =  target.getAttribute('data-chanel');
+                }
                 this.sendRequest(source);
             }
         });

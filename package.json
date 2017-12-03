@@ -22,6 +22,8 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
+    "elem-dataset": "^1.1.1",
+    "element-dataset": "^2.2.6",
     "whatwg-fetch": "^2.0.3"
   }
 }
