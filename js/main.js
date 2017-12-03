@@ -27,9 +27,9 @@ class News {
      * Sends fetch request
      * @param source {String} - news source
      */
-    async sendRequest(source) {
+    sendRequest(source) {
         let url = this.buildUrl(source);
-        const response = await fetch(url).
+        fetch(url).
         then((response) => this.parseJSON(response)).
         then((data) => this.parseData(data)).
         then((nodes) => this.render({

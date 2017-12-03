@@ -1,9 +1,0 @@
-{
-  "plugins": [[
-    "babel-cut-logs", {
-      "declarations": [
-        
-      ]
-    }
-  ]]
-}
