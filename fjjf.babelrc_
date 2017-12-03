@@ -1,6 +1,0 @@
-{
-    plugins: [[
-        "log remover",
-        { declarations: [{name: "", path: ""}] }
-    ]]
-}

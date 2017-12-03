@@ -27,15 +27,14 @@ class News {
      * Sends fetch request
      * @param source {String} - news source
      */
-    sendRequest(source) {
+    async sendRequest(source) {
         let url = this.buildUrl(source);
-        fetch(url).
+        const response = await fetch(url).
         then((response) => this.parseJSON(response)).
         then((data) => this.parseData(data)).
         then((nodes) => this.render({
                 nodes
-        })).
-        catch((err) => console.log(err));
+        })).catch ((err)=> console.log(err));
     };
     
     /**
